@@ -52,6 +52,11 @@ body { margin: 0; }
   right: 20px;
 }
 
+.s-logo-link {
+  color: white;
+  text-decoration: none;
+}
+
 #s-side-menu {
   background-color: white;
   border: 1px solid #ddd;
