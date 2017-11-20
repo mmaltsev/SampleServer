@@ -6,16 +6,16 @@ function httpGet(theUrl) {
 }
 
 function legendClick() {
-  var display = document.getElementById('s-side-menu').style.display
-  if (display === 'none') {
+  var display = document.getElementById('s-img-close').style.display
+  if (display === 'none' || display === '') {
     document.getElementById('s-img-menu').style.display = 'none'
     document.getElementById('s-img-close').style.display = 'initial'
-    document.getElementById('s-side-menu').style.display = 'flex'
+    document.getElementById('s-side-menu').style.marginLeft = '0'
     document.getElementById('s-legend').style.backgroundColor = '#218c86'
   } else {
     document.getElementById('s-img-close').style.display = 'none'
     document.getElementById('s-img-menu').style.display = 'initial'
-    document.getElementById('s-side-menu').style.display = 'none'
+    document.getElementById('s-side-menu').style.marginLeft = '-71%'
     document.getElementById('s-legend').style.backgroundColor = 'lightseagreen'
   }
 }

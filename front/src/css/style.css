@@ -1,6 +1,6 @@
 body { margin: 0; }
 
-.s-wrapper { height: 90vh; }
+.s-wrapper { height: calc(100vh - 50px); }
 
 .s-top-menu {
   background-color: lightseagreen;
@@ -10,7 +10,6 @@ body { margin: 0; }
 }
 
 #s-legend {
-  background-color: #218c86;
   cursor: pointer;
   display: none;
   flex-direction: row;
@@ -35,7 +34,7 @@ body { margin: 0; }
 }
 .s-menu-el-wr:hover, .s-curr-p { background-color: #218c86; }
 
-.s-menu-el { text-decoration: none; }
+.s-menu-el { text-decoration: none; z-index: 0; }
 
 .s-main {
   background-color: #f0f0f0;
@@ -65,7 +64,7 @@ body { margin: 0; }
   text-align: center;
   align-items: center;
   line-height: 40px;
-  padding: 20px 5%;
+  padding: 20px;
 }
 
 .s-span { font-size: 20px; }
@@ -84,7 +83,15 @@ body { margin: 0; }
     border: 1px solid #ddd;
     display: flex;
     flex-direction: column;
-    width: 45%;
+    height: calc(100% - 52px);
+    margin-left: -71%;
+    width: 70%;
+    position: absolute;
+
+    -webkit-transition: margin 0.2s ease-in-out;
+    -moz-transition: margin 0.2s ease-in-out;
+    -o-transition: margin 0.2s ease-in-out;
+    transition: margin 0.2s ease-in-out;
   }
   
   .s-side-menu-el { text-decoration: none; }
@@ -100,5 +107,5 @@ body { margin: 0; }
 
   #s-legend { display: flex; }
 
-  #s-img-close { display: initial; }
+  #s-img-menu { display: initial; }
 }
