@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sample Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="s-wrapper">
+      <div class="s-top-menu">
+        <div id="s-legend" onclick="legendClick()">
+          <img id="s-img-close" src="img/close.png" />
+          <img id="s-img-menu" src="img/menu.png" />
+        </div>
+        <div class="s-menu-els">
+          <a class="s-menu-el" href="index.html"><div class="s-menu-el-wr">Index</div></a>
+          <a class="s-menu-el" href="outdex.html"><div class="s-menu-el-wr s-curr-p">Outdex</div></a>
+        </div>
+        <span class="s-logo">Sample Website</span>
+      </div>
+      <div class="s-main">
+        <div id="s-side-menu">
+          <a class="s-side-menu-el" href="index.html"><div class="s-side-menu-el-wr">Index</div></a>
+          <a class="s-side-menu-el" href="outdex.html"><div class="s-side-menu-el-wr s-curr-m">Outdex</div></a>
+        </div>
+        <div id="s-content"></div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

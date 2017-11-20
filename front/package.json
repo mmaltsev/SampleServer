@@ -1,0 +1,23 @@
+{
+  "name": "",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Maxim Maltsev <maltsevmn@ya.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+  },
+  "dependencies": {
+  },
+  "main": "src/index.html"
+}
