@@ -4,14 +4,8 @@ Sample environment for web development.
 ## Running
 Make sure to have [Anaconda 3](https://www.continuum.io/downloads).
 
-For Unix systems, run:
-```
-$ bash setup-from-scratch.sh
-```
+When launching the server for the first time, run `$ bash setup-from-scratch.sh` for Unix systems and `$ setup-from-scratch.bat` for Windows.
 
-For Windows, run:
-```
-$ setup-from-scratch.bat
-```
+For the second launch and later on, use `$ bash run.sh` for Unix systems and `$ run.bat` for Windows.
 
 By default, the app will be available on [http://localhost:5555/](http://localhost:5555/).
