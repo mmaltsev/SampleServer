@@ -1,4 +1,4 @@
-# Development Installation
+# Environment Installation
 
 Enable [Anaconda 3](https://www.continuum.io/downloads).
 
