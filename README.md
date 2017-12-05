@@ -1,4 +1,4 @@
-# SampleServer
+# SampleWebProject
 Sample environment for web development.
 
 ## Running
