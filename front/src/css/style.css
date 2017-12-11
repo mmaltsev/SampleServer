@@ -1,4 +1,4 @@
-body { margin: 0; }
+.s-body{ margin: 0; }
 
 .s-wrapper { height: calc(100vh - 50px); }
 
@@ -59,6 +59,8 @@ body { margin: 0; }
 #s-side-menu { display: none; }
 
 .s-content {
+  align-self: center;
+  background-color: white;
   display: flex;
   flex-direction: column;
   text-align: center;
