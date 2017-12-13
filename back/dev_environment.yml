@@ -1,7 +1,8 @@
-name: SampleServer
+name: SimpleImageWebEditor
 dependencies:
-- python=3.6
+- python=3.6.3
 - pip:
+    - future
     - Flask
     - gevent
     - git+https://github.com/ansrivas/pylogging.git

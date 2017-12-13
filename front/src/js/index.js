@@ -1,3 +1,5 @@
+postRequest('/image_editor', {data: 'data'})
+
 function getRequest(url) {
   axios.get(url)
     .then(function(response) {

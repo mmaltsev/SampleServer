@@ -10,6 +10,10 @@ from pylogging import HandlerType, setup_logger
 
 from .config import CONFIG
 
+# import .image_editor as image_editor
+
+from .image_editor import image_name_extract
+
 logger = logging.getLogger(__name__)
 app = Flask(__name__, static_folder='../../front/src')
 
@@ -49,6 +53,15 @@ def send_node_modules(path):
     logger.info("route: node_modules/{}".format(path))
     path_prefix = '../../front/node_modules'
     return send_from_directory(path_prefix, path)
+
+
+@app.route('/image_editor', methods=['POST'])
+def post_image():
+    """Image editor handler."""
+    logger.info("route: /image_editor")
+    data = request.get_json()['json']
+    print(data)
+    return 'Success!'
 
 
 @app.route('/<path:path>')

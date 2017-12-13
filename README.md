@@ -1,4 +1,4 @@
-# SampleWebProject
+# SimpleImageWebEditor
 Sample environment for web development.
 
 ## Running
