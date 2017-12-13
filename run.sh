@@ -1,4 +1,4 @@
 echo "-----Starting the server-----"
 cd back
-source activate SampleServer
+source activate SimpleImageWebEditor
 python run.py

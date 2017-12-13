@@ -1,7 +1,7 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 """Initialize module utils."""
-from server import server
+from image_editor import server
 from pylogging import HandlerType, setup_logger
 
 if __name__ == '__main__':

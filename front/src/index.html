@@ -26,14 +26,17 @@
         </div>
 
         <div class="s-content">
-          <span class="s-span">Get data</span>
-          <button class="s-button">Get data</button>
-          <div id="s-result"></div>
+          <form>
+            <input type="file" id="image" />
+            <input type="button" value="Send Image" onclick="sendImage()" />
+          </form>
+          <img src="" id="previewImage" />
         </div>
         
       </div>
     </div>
 
+    <script src="node_modules/axios/dist/axios.js"></script>
     <script src="js/index.js"></script>
   </body>
 </html>

@@ -1,4 +1,11 @@
-postRequest('/image_editor', {data: 'data'})
+function sendImage() {
+  img = document.getElementById('image').files[0]
+  var reader  = new FileReader()
+  reader.readAsDataURL(img)
+  reader.addEventListener('load', () => {
+    postRequest('/image_editor', {img: reader.result})
+  }, false);
+}
 
 function getRequest(url) {
   axios.get(url)
@@ -14,10 +21,15 @@ function postRequest(url, params) {
   axios.post(url, params)
     .then(function(response) {
       console.log('Requested data: ', response.data)
+      drawImage('data:image/png;base64,' + response.data)
     })
     .catch(function(error) {
       console.log('Error: ', error);
     });
+}
+
+function drawImage(src) {
+  document.getElementById('previewImage').src = src
 }
 
 function legendClick() {

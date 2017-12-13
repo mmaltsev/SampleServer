@@ -5,6 +5,8 @@ from ntpath import basename
 import click
 from PIL import Image
 from termcolor import colored
+import base64
+import io
 
 
 def image_name_extract(img_path):
@@ -86,11 +88,26 @@ def square(data):
     return canvas_resize(data, size)
 
 
-def editor(path, editing, width, height):
-    """Image editing."""
-    img = Image.open(path)
-    img_name = image_name_extract(path)
+def bytes_to_array(img_orig):
+    """Bytes to array."""
+    img64 = img_orig.replace('data:image/png;base64,', '')
+    img_bytes = base64.b64decode(s=img64)
+    # img = Image.frombytes(img_bytes)
+    img = Image.open(io.BytesIO(img_bytes))
+    return img
 
+
+def array_to_bytes(img):
+    """Array to bytes."""
+    img_byte_arr = io.BytesIO()
+    img.save(img_byte_arr, format='PNG')
+    img_byte_arr = img_byte_arr.getvalue()
+    img_res = base64.b64encode(s=img_byte_arr)
+    return img_res
+
+
+def editor(img, editing, width, height):
+    """Image editing."""
     if editing == 'transparent':
         img = background_cut(img)
 
@@ -118,7 +135,7 @@ def editor(path, editing, width, height):
         img = background_cut(img)
         img = whiten(img)
         img = square(img)
-    return img, img_name
+    return img
 
 
 @click.command()
@@ -137,7 +154,9 @@ def main(path, editing, width, height):
     """Image editor for transparenting, resizing, croping and changing colors of images."""
     print('')
     if path and editing:
-        img, img_name = editor(path, editing, width, height)
+        img = Image.open(path)
+        img_name = image_name_extract(path)
+        img = editor(img, editing, width, height)
         time_stamp = int(time.time())
         img_name += str(time_stamp) + '.png'
         img.save(img_name, 'PNG')

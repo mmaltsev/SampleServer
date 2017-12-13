@@ -59,7 +59,6 @@
 #s-side-menu { display: none; }
 
 .s-content {
-  align-self: center;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -67,6 +66,8 @@
   align-items: center;
   line-height: 40px;
   padding: 20px;
+  min-width: 50%;
+  margin: 10px auto;
 }
 
 .s-span { font-size: 20px; }

@@ -10,9 +10,7 @@ from pylogging import HandlerType, setup_logger
 
 from .config import CONFIG
 
-# import .image_editor as image_editor
-
-from .image_editor import image_name_extract
+from .image_editor import editor, bytes_to_array, array_to_bytes
 
 logger = logging.getLogger(__name__)
 app = Flask(__name__, static_folder='../../front/src')
@@ -59,9 +57,11 @@ def send_node_modules(path):
 def post_image():
     """Image editor handler."""
     logger.info("route: /image_editor")
-    data = request.get_json()['json']
-    print(data)
-    return 'Success!'
+    img_orig = request.get_json()['img']
+    img = bytes_to_array(img_orig)
+    img_new = editor(img, '-b', 100, 100)
+    img_res = array_to_bytes(img_new)
+    return img_res
 
 
 @app.route('/<path:path>')

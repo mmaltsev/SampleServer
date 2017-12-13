@@ -6,3 +6,6 @@ dependencies:
     - Flask
     - gevent
     - git+https://github.com/ansrivas/pylogging.git
+    - Pillow
+    - termcolor
+    - click
